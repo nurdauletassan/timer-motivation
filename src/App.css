@@ -1,0 +1,150 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+
+:root {
+  --primary-color: #646cff;
+  --bg-primary: #ffffff;
+  --text-primary: #213547;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.5;
+  font-weight: 400;
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-primary);
+  transition: background-color 0.3s ease;
+}
+
+header {
+  width: 100%;
+  background: var(--bg-secondary);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
+}
+
+header p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-wrapper {
+  margin: 200px;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.change-name-btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  border: 2px solid #4a90e2;
+  color: #4a90e2;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.change-name-btn:hover {
+  background-color: #4a90e2;
+  color: white;
+}

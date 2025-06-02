@@ -1,0 +1,50 @@
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.time-unit input {
+  width: 80px;
+  height: 80px;
+  font-size: 2.5rem;
+  text-align: center;
+  border: 2px solid #646cff;
+  border-radius: 15px;
+  background: #f8f9fa;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+/* Remove spinners from number input */
+.time-unit input::-webkit-inner-spin-button,
+.time-unit input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+.time-unit input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.time-unit input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.2);
+}
+
+.time-unit span {
+  font-size: 0.9rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+  .time-unit input {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+} 

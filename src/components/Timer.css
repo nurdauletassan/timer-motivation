@@ -1,0 +1,265 @@
+:root[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --accent-color: #646cff;
+  --accent-hover: #535bf2;
+  --border-color: #646cff;
+  --button-bg: #f0f0f0;
+  --button-hover: #e0e0e0;
+  --pause-btn: #ff6b6b;
+  --pause-btn-hover: #ff5252;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme="dark"] {
+  --bg-primary: #151515;
+  --bg-secondary: #202020;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --accent-color: #414aff;
+  --accent-hover: #535bf2;
+  --border-color: #646cff;
+  --button-bg: #2d2d2d;
+  --button-hover: #3d3d3d;
+  --pause-btn: #ff6b6b;
+  --pause-btn-hover: #ff5252;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+.timer-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  background: var(--bg-primary);
+  transition: all 0.3s ease;
+}
+
+.quick-select {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.quick-select button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--button-bg);
+  color: var(--text-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quick-select button:hover {
+  background: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+.timer-display-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.timer-display-wrapper.running {
+  background: none;
+  box-shadow: none;
+  padding: 0px;
+  margin: 2rem 200px;
+  transform: scale(1.2);
+  margin-bottom: 4rem;
+}
+
+.timer-display {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.time-separator {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin: 0 -1rem;
+  line-height: 1;
+  padding-top: 0.5rem;
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.time-unit input {
+  width: 80px;
+  height: 80px;
+  font-size: 2.5rem;
+  text-align: center;
+  border: 2px solid var(--border-color);
+  border-radius: 15px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.timer-display-wrapper.running .time-unit input {
+  border: none;
+  background: none;
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  width: 100px;
+  height: 100px;
+}
+
+.time-unit input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.2);
+}
+
+.timer-display-wrapper.running .time-unit input:focus {
+  box-shadow: none;
+}
+
+.time-unit span {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.timer-display-wrapper.running .time-unit span {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-top: 0.5rem;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.timer-controls button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.start-btn {
+  background: var(--accent-color);
+  color: white;
+}
+
+.start-btn:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.pause-btn {
+  background: var(--pause-btn);
+  color: white;
+}
+
+.pause-btn:hover {
+  background: var(--pause-btn-hover);
+  transform: translateY(-2px);
+}
+
+.reset-btn {
+  background: var(--button-bg);
+  color: var(--text-primary);
+}
+
+.reset-btn:hover:not(:disabled) {
+  background: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  background: url('/confetti.gif') center/cover no-repeat;
+  animation: fadeOut 5s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .timer-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .timer-display {
+    gap: 1rem;
+  }
+
+  .time-unit input {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .timer-display-wrapper.running {
+    transform: scale(1.1);
+    margin: 2rem 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .timer-display-wrapper.running .time-unit input {
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+  }
+
+  .time-separator {
+    font-size: 3rem;
+    margin: 0 -0.5rem;
+    padding-top: 0.3rem;
+  }
+
+  .timer-display-wrapper.running .time-unit span {
+    font-size: 1rem;
+  }
+
+  .timer-controls button {
+    padding: 0.75rem 1.5rem;
+  }
+} 
